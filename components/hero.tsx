@@ -25,6 +25,7 @@ export default function Hero() {
   });
   
   return (
+    
     <section className="relative">
 
       {/* Illustration behind hero content */}
@@ -87,6 +88,7 @@ export default function Hero() {
         </div>
 
       </div>
+      
     </section>
   );
 }

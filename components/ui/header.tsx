@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Logo from './logo'
 import Dropdown from '@/components/utils/dropdown'
 import MobileMenu from './mobile-menu'
+import ThemeToggle from '@/components/ThemeToggle'; // Updated import path
 
 export default function Header() {
 
@@ -31,11 +32,13 @@ export default function Header() {
           <div className="shrink-0 mr-4">
             <Logo />
           </div>
-
+          
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
             {/* Desktop sign in links */}
+            
             <ul className="flex grow justify-end flex-wrap items-center">
+            <ThemeToggle />
               <li>
                 <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
               </li>

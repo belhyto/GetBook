@@ -291,3 +291,54 @@
   display: block;
   margin: 0 auto;
 }
+
+.theme-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* hero.css */
+
+/* Define the default styles for the light theme */
+
+body {
+  background-color: #EBEEFF;
+  color: #333;
+}
+
+/* Define the styles for the dark theme */
+
+.dark body {
+  background-color: #333;
+  color: #40ACDE;
+}
+
+/* Define other styles for the light and dark themes */
+
+.dark h1 {
+  color: #fff;
+}
+
+.dark h4 {
+  color: #000000;
+}
+
+.dark h2 {
+  color: #40ACDE;
+}
+
+.dark p {
+  color: #bac4c9;
+}
+
+/* … */
+
+.dark .h1 {
+  color: #000000;
+}
+
+.dark h6 {
+  color: #d1d1d1;
+}

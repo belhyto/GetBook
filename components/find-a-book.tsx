@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function FindABook() {
   return (
-    <section className="relative bg-gray-100 py-20">
+    <section className="relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Text content */}

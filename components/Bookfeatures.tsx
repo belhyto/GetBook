@@ -5,7 +5,7 @@ import 'swiper/css';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
-
+ 
 export default function Bookfeatures() {
   const [books] = useState([
     { title: 'Book 1', price: '$10', rating: 4, image: '/images/home-book-1.png' },
