@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -15,6 +15,28 @@ export default function Bookfeatures() {
     // Add more book objects as needed
   ]);
 
+  const [slidesPerView, setSlidesPerView] = useState(4);
+   
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      if (window.innerWidth < 768) {
+        setSlidesPerView(1);
+      } else if (window.innerWidth < 1024) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(4);
+      }
+    };
+    
+    window.addEventListener('resize', updateSlidesPerView);
+    updateSlidesPerView();
+
+    return () => {
+      window.removeEventListener('resize', updateSlidesPerView);
+    };
+  }, []);
+  
+
   return (
     <section className="relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -27,7 +49,7 @@ export default function Bookfeatures() {
           {/* Carousel */}
           <Swiper
             spaceBetween={30}
-            slidesPerView={4}
+            slidesPerView={slidesPerView}
             navigation
             pagination={{ clickable: true }}
             className="mySwiper"
