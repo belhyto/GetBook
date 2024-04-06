@@ -8,6 +8,7 @@
   display: block;
   margin: 0 auto;
 }
+
 .theme-toggle {
   background-color: transparent;
   border: none;
@@ -39,7 +40,7 @@ body {
   color: #40ACDE;
 }
 .dark p {
-  color: #bac4c9;
+  color: #5b8194;
 }
 /* … */
 .dark .h1 {
