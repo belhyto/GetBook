@@ -30,7 +30,6 @@ export default function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             <Logo />
-            <p>GetBook</p>
           </div>
 
           {/* Desktop navigation */}
