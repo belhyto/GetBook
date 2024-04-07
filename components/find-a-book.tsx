@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
+import './hero.css';
 export default function FindABook() {
   return (
     <section className="relative">
@@ -16,9 +16,10 @@ export default function FindABook() {
 </Link> 
           </div>
           {/* Image */}
-        <div className="md:ml-auto max-w-xl">
+          <div className="md:ml-auto max-w-xl image-container">
   <div className="relative rounded-lg overflow-hidden">
     <Image
+    className="md:max-w-none mx-auto rounded"
       src="/images/home-book-1.png"
       alt="Find a Book"
       width={50} 

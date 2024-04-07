@@ -2,6 +2,8 @@ import Image from 'next/image'
 import TestimonialImage from '@/public/images/testimonial-perfil-1.png'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './hero.css'; // Import CSS file for styling
+
 export default function Testimonials() {
   return (
     <section className="relative">
@@ -33,7 +35,7 @@ export default function Testimonials() {
           </div>
 
           {/* Items */}
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6">
 
             {/* Testimonials */}
             <div className="max-w-3xl mx-auto mt-20" data-aos="zoom-y-out">

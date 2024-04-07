@@ -5,18 +5,28 @@ import 'swiper/css';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
- 
+import './hero.css';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 export default function Bookfeatures() {
   const [books] = useState([
     { title: 'Book 1', price: '$10', rating: 4, image: '/images/home-book-1.png' },
     { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
     { title: 'Book 1', price: '$10', rating: 4, image: '/images/home-book-1.png' },
     { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
+    { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
+    { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
+    { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
+
     // Add more book objects as needed
   ]);
 
   const [slidesPerView, setSlidesPerView] = useState(4);
-   
+
   useEffect(() => {
     const updateSlidesPerView = () => {
       if (window.innerWidth < 768) {
@@ -27,7 +37,7 @@ export default function Bookfeatures() {
         setSlidesPerView(4);
       }
     };
-    
+
     window.addEventListener('resize', updateSlidesPerView);
     updateSlidesPerView();
 
@@ -35,7 +45,6 @@ export default function Bookfeatures() {
       window.removeEventListener('resize', updateSlidesPerView);
     };
   }, []);
-  
 
   return (
     <section className="relative">
@@ -48,12 +57,21 @@ export default function Bookfeatures() {
           </div>
           {/* Carousel */}
           <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={30}
             slidesPerView={slidesPerView}
-            navigation
-            pagination={{ clickable: true }}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
             className="mySwiper"
+            scrollbar={{ draggable: true }}
           >
+            {/* Navigation Buttons */}
+            <div className="swiper-button-prev"></div>
+            <div className="swiper-button-next"></div>
+
+            {/* Book Slides */}
             {books.map((book, index) => (
               <SwiperSlide key={index}>
                 <div className="bg-white rounded shadow-xl p-4">
@@ -78,6 +96,32 @@ export default function Bookfeatures() {
           </Swiper>
         </div>
       </div>
+      <style jsx>{`
+        .swiper-button-prev,
+        .swiper-button-next {
+          width: 40px;
+          height: 40px;
+          background: #fff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+          background-color: #f5f5f5;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+          font-size: 14px;
+          color: #333;
+        }
+      `}</style>
     </section>
   );
 }

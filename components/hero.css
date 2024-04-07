@@ -49,3 +49,36 @@ body {
 .dark h6 {
   color: #d1d1d1;
 }
+
+@media screen and (max-width: 640px) {
+  .image-container {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.swiper-button-prev {
+  left: -70px;
+}
+
+.swiper-button-next {
+  right: -70px;
+}

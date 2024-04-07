@@ -4,6 +4,11 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import './hero.css'; // Import CSS file for styling
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 export default function Hero() {
   const [swiperParams, setSwiperParams] = useState({
@@ -58,6 +63,9 @@ export default function Hero() {
           {/* Hero image */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 relative"> {/* Added relativeclass */}
             <div className="swiper-container">
+            <div className="swiper-button-prev"></div>
+            <div className="swiper-button-next"></div>
+
               <Swiper {...swiperParams}>
                 <SwiperSlide>
                   <img src="/images/home-book-1.png" alt="Slide 1" />
@@ -72,16 +80,38 @@ export default function Hero() {
                   <img src="/images/home-book-4.png" alt="Slide 4" />
                 </SwiperSlide>
               </Swiper>
-              <div className="swiper-button-prev absolute top-1/2 -translate-y-1/2 left-0"> {/* Positioned to the left */}
-                <img src="/images/arrow-left-s-line.png" alt="Previous" />
-              </div>
-              <div className="swiper-button-next absolute top-1/2 -translate-y-1/2 right-0"> {/* Positioned to the right */}
-                <img src="/images/arrow-right-s-line.png" alt="Next" />
-              </div>
+             
+              
             </div>
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .swiper-button-prev,
+        .swiper-button-next {
+          width: 40px;
+          height: 40px;
+          background: #fff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+          background-color: #f5f5f5;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+          font-size: 14px;
+          color: #333;
+        }
+      `}</style>
     </section>
   );
 }
