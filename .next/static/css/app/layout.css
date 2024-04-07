@@ -1284,12 +1284,6 @@ html {
 .top-full {
   top: 100%;
 }
-.right-10 {
-  right: 2.5rem;
-}
-.top-10 {
-  top: 2.5rem;
-}
 .-z-1 {
   z-index: -1;
 }
@@ -1313,9 +1307,6 @@ html {
 }
 .col-span-1 {
   grid-column: span 1 / span 1;
-}
-.m-4 {
-  margin: 1rem;
 }
 .m-auto {
   margin: auto;
@@ -1759,14 +1750,6 @@ html {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-blue-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(204 226 252 / var(--tw-bg-opacity));
-}
-.bg-teal-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(12 22 69 / var(--tw-bg-opacity));
-}
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -1877,6 +1860,14 @@ html {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .pb-12 {
   padding-bottom: 3rem;
@@ -2050,9 +2041,9 @@ html {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
-.text-red-500 {
+.text-black {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -2077,9 +2068,6 @@ html {
 }
 .opacity-75 {
   opacity: 0.75;
-}
-.opacity-5 {
-  opacity: 0.05;
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);

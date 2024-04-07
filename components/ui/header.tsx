@@ -7,6 +7,10 @@ import Logo from './logo'
 import Dropdown from '@/components/utils/dropdown'
 import MobileMenu from './mobile-menu'
 import ThemeToggle from '@/components/ThemeToggle'; // Updated import path
+import BookListing from '@/pages/bookListing'
+import FindABook from '../find-a-book'
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Header() {
 
@@ -38,7 +42,23 @@ export default function Header() {
             {/* Desktop sign in links */}
             
             <ul className="flex grow justify-end flex-wrap items-center">
-            <ThemeToggle />
+            <li>
+              <Link href="/" legacyBehavior>
+                <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Home</a>
+                </Link>
+                </li>
+            <li>
+              <Link href="/browse-books" legacyBehavior>
+                <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Find a Book</a>
+                </Link>
+                </li>
+            <li>
+              <Link href="/bookListing" legacyBehavior>
+                <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">List a Book</a>
+                </Link>
+                </li>
+              
+          
               <li>
                 <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
               </li>
@@ -50,6 +70,15 @@ export default function Header() {
                   </svg>
                 </Link>
               </li>
+              <li>
+              <Link href="/profile" legacyBehavior>
+      <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+        <FontAwesomeIcon icon={faUser} className="text-black text-xl mr-2" /> {/* Adjust size and color */}
+        
+      </a>
+    </Link>
+  </li>
+              <li> <span> <ThemeToggle /> </span>  </li>
             </ul>
 
           </nav>

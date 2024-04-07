@@ -127,7 +127,7 @@ export default function Bookfeatures() {
               prevEl: '.swiper-button-prev',
             }}
             className="mySwiper"
-            scrollbar={{ draggable: true }}
+           
           >
             {/* Navigation Buttons */}
             <div className="swiper-button-prev"></div>
