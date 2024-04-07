@@ -10,6 +10,7 @@ import Testimonials from '@/components/testimonials'
 import Newsletter from '@/components/newsletter'
 import FindABook from '@/components/find-a-book'
 import Bookfeatures from '@/components/Bookfeatures'
+import NewBooks from '@/components/newBooks'
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <FeaturesBlocks />
       <Bookfeatures/>
        <FindABook/>
+       <NewBooks/>
        <Testimonials />
       <Newsletter />
 

@@ -2,8 +2,6 @@
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import './hero.css';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
@@ -11,21 +9,81 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { faStar, faInfoCircle, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export default function Bookfeatures() {
   const [books] = useState([
-    { title: 'Book 1', price: '$10', rating: 4, image: '/images/home-book-1.png' },
-    { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
-    { title: 'Book 1', price: '$10', rating: 4, image: '/images/home-book-1.png' },
-    { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
-    { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
-    { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
-    { title: 'Book 2', price: '$15', rating: 5, image: '/images/home-book-2.png' },
-
+    {
+      title: 'Book 1',
+      price: '$10',
+      rating: 4,
+      image: '/images/home-book-1.png',
+      buttonText: 'Add to Cart',
+      buttonLink: '#',
+    },
+    {
+      title: 'Book 2',
+      price: '$15',
+      rating: 5,
+      image: '/images/home-book-2.png',
+      buttonText: 'Add to Cart',
+      buttonLink: '#',
+    },
+    {
+      title: 'Book 1',
+      price: '$10',
+      rating: 4,
+      image: '/images/home-book-1.png',
+      buttonText: 'Add to Cart',
+      buttonLink: '#',
+    },
+    {
+      title: 'Book 2',
+      price: '$15',
+      rating: 5,
+      image: '/images/home-book-2.png',
+      buttonText: 'Add to Cart',
+      buttonLink: '#',
+    },
+    {
+      title: 'Book 1',
+      price: '$10',
+      rating: 4,
+      image: '/images/home-book-1.png',
+      buttonText: 'Add to Cart',
+      buttonLink: '#',
+    },
+    {
+      title: 'Book 2',
+      price: '$15',
+      rating: 5,
+      image: '/images/home-book-2.png',
+      buttonText: 'Add to Cart',
+      buttonLink: '#',
+    },
+    {
+      title: 'Book 1',
+      price: '$10',
+      rating: 4,
+      image: '/images/home-book-1.png',
+      buttonText: 'Add to Cart',
+      buttonLink: '#',
+    },
+    {
+      title: 'Book 2',
+      price: '$15',
+      rating: 5,
+      image: '/images/home-book-2.png',
+      buttonText: 'Add to Cart',
+      buttonLink: '#',
+    },
     // Add more book objects as needed
   ]);
 
   const [slidesPerView, setSlidesPerView] = useState(4);
+  const [bookHover, setBookHover] = useState(new Array(books.length).fill(false));
 
   useEffect(() => {
     const updateSlidesPerView = () => {
@@ -40,7 +98,11 @@ export default function Bookfeatures() {
 
     window.addEventListener('resize', updateSlidesPerView);
     updateSlidesPerView();
-
+    const handleBookHover = (index: number) => {
+      const newBookHover = [...bookHover];
+      newBookHover[index] = !newBookHover[index];
+      setBookHover(newBookHover);
+    }
     return () => {
       window.removeEventListener('resize', updateSlidesPerView);
     };
@@ -73,25 +135,42 @@ export default function Bookfeatures() {
 
             {/* Book Slides */}
             {books.map((book, index) => (
-     <SwiperSlide key={index}>
-  <div className="bg-teal-100 rounded shadow-xl p-4 flex flex-col items-center"> {/* Add flex and items-center classes */}
-    <Image
-      src={book.image}
-      alt={book.title}
-      width={200}
-      height={250}
-      className="w-full h-auto mb-4"
-    />
-    <h3 className="text-lg font-semibold mb-2 text-teal-200">{book.title}</h3> {/* Add text-teal-200 class */}
-    <p className="text-gray-600 mb-2">{book.price}</p>
-    {/* Render star rating here */}
-    <div className="flex text-yellow-400">
-      {Array.from({ length: book.rating }, (_, i) => (
-        <FontAwesomeIcon icon={faStar} key={i} />
-      ))}
-    </div>
-  </div>
-</SwiperSlide>
+             <SwiperSlide key={index}>
+             <div className="relative bg-teal-100 rounded shadow-xl p-6 flex flex-col items-center">
+             <div className="flex flex-col right-0 mt-auto">
+                 <div className="mb-2">
+                   <FontAwesomeIcon icon={faInfoCircle} className="text-blue-600 mr-2 text-2xl" />
+                   <FontAwesomeIcon icon={faHeart} className="text-blue-600 text-2xl" />
+                 </div>
+                 <div>
+                  
+                 </div>
+               </div>
+               <div className="mb-4">
+                 <Image
+                   src={book.image}
+                   alt={book.title}
+                   width={300} // Increase the width
+                   height={375} // Increase the height
+                   className="w-full h-auto"
+                 />
+               </div>
+               <h3 className="text-xl font-semibold mb-2 text-teal-200">{book.title}</h3>
+               <p className="text-gray-600 mb-2">{book.price}</p>
+               {/* Render buttons here */}
+               <div>
+                 <a
+                   className="btn text-white bg-blue-600 hover:bg-blue-600 w-full mb-4 sm:w-auto sm:mb-0"
+                   href={book.buttonLink}
+                 >
+                   {book.buttonText}
+                 </a>
+               </div>
+               {/* Icons */}
+              
+             </div>
+           </SwiperSlide>
+           
             ))}
           </Swiper>
         </div>
@@ -121,6 +200,11 @@ export default function Bookfeatures() {
           font-size: 14px;
           color: #333;
         }
+        .fa-info-circle,
+ .fa-heart {
+    font-size: 20 px;
+    color: #4960D4;
+  }
       `}</style>
     </section>
   );
