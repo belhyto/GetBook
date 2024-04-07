@@ -73,25 +73,25 @@ export default function Bookfeatures() {
 
             {/* Book Slides */}
             {books.map((book, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-white rounded shadow-xl p-4">
-                  <Image
-                    src={book.image}
-                    alt={book.title}
-                    width={200}
-                    height={250}
-                    className="w-full h-auto mb-4"
-                  />
-                  <h3 className="text-lg font-semibold mb-2">{book.title}</h3>
-                  <p className="text-gray-600 mb-2">{book.price}</p>
-                  {/* Render star rating here */}
-                  <div className="flex text-yellow-400">
-                    {Array.from({ length: book.rating }, (_, i) => (
-                      <FontAwesomeIcon icon={faStar} key={i} />
-                    ))}
-                  </div>
-                </div>
-              </SwiperSlide>
+     <SwiperSlide key={index}>
+  <div className="bg-teal-100 rounded shadow-xl p-4 flex flex-col items-center"> {/* Add flex and items-center classes */}
+    <Image
+      src={book.image}
+      alt={book.title}
+      width={200}
+      height={250}
+      className="w-full h-auto mb-4"
+    />
+    <h3 className="text-lg font-semibold mb-2 text-teal-200">{book.title}</h3> {/* Add text-teal-200 class */}
+    <p className="text-gray-600 mb-2">{book.price}</p>
+    {/* Render star rating here */}
+    <div className="flex text-yellow-400">
+      {Array.from({ length: book.rating }, (_, i) => (
+        <FontAwesomeIcon icon={faStar} key={i} />
+      ))}
+    </div>
+  </div>
+</SwiperSlide>
             ))}
           </Swiper>
         </div>
@@ -101,7 +101,7 @@ export default function Bookfeatures() {
         .swiper-button-next {
           width: 40px;
           height: 40px;
-          background: #fff;
+          background: #ffff;
           border-radius: 50%;
           display: flex;
           align-items: center;
