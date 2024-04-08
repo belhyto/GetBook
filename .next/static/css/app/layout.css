@@ -1884,14 +1884,6 @@ html {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1985,6 +1977,10 @@ html {
 .tracking-tighter {
   letter-spacing: -0.02em;
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(51 140 245 / var(--tw-text-opacity));
@@ -2063,10 +2059,6 @@ html {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity));
-}
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -2185,10 +2177,6 @@ html {
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(73 96 212 / var(--tw-text-opacity));
-}
-.hover\:text-blue-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 100 218 / var(--tw-text-opacity));
 }
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;

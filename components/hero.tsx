@@ -26,6 +26,7 @@ export default function Hero() {
       prevEl: '.swiper-button-prev',
     },
   });
+  
 
   return (
     <section className="relative">

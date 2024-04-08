@@ -1,8 +1,7 @@
 {
-  "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/bookListing": "pages/bookListing.js",
-  "/profile": "pages/profile.js",
   "/browse-books": "pages/browse-books.js"
 }
